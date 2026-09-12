@@ -12,6 +12,12 @@ int main()
 {
     cout << "TicTacToe project file created!\n";
    testfunc();
+
+
+
+
+
+   cout << "\n\n\n\n\n"; //before ending program make distance with VS's natural end-of-program output.
 }
 
 

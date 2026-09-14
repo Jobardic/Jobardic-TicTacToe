@@ -25,7 +25,7 @@ void playerTurn(int s) { //takes the player input and sees if it's taken or not
     while (true) {
         cout << "======Choose your next slot======" << endl;
         int input;
-        while (!(cin >> input)) { //while loop keeps going until a valid character (1-9) is input
+        while (!(cin >> input) || input < 0 || input > 9) { //while loop keeps going until a valid character (1-9) is input
             string garbage;
             cin.clear();
             getline(cin, garbage);

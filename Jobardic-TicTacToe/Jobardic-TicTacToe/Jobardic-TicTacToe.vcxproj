@@ -139,10 +139,12 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Jobardic-end_screen.cpp" />
     <ClCompile Include="Jobardic-test_file.cpp" />
     <ClCompile Include="Jobardic-TicTacToe.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Jobardic-end_screen.h" />
     <ClInclude Include="Jobardic-test_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

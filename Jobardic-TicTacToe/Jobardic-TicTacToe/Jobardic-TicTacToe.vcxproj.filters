@@ -21,9 +21,15 @@
     <ClCompile Include="Jobardic-test_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Jobardic-end_screen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jobardic-test_header.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Jobardic-end_screen.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

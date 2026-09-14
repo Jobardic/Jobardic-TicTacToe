@@ -6,15 +6,14 @@
 
 #include <iostream>
 #include "Jobardic-test_header.h"
+#include "Jobardic-end_screen.h"; //By Matthew Mullen
 using namespace std;
+
+string playerName = "Player"; //by default
+
 
 int main()
 {
-    cout << "TicTacToe project file created!\n";
-   testfunc();
-
-
-
 
 
    cout << "\n\n\n\n\n"; //before ending program make distance with VS's natural end-of-program output.

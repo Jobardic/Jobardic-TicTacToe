@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Jobardic-end_screen.cpp" />
+    <ClCompile Include="Jobardic-start_screen.cpp" />
     <ClCompile Include="Jobardic-test_file.cpp" />
     <ClCompile Include="Jobardic-TicTacToe.cpp" />
   </ItemGroup>

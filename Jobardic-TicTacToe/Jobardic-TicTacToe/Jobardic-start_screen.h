@@ -7,4 +7,5 @@
 void MainMenu_Screen(bool);
 void Guide_Screen();
 void StartGame(bool);
+void QuitGame();
 

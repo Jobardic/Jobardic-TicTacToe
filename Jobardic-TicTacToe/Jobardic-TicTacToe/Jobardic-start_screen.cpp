@@ -30,13 +30,14 @@ void MainMenu_Screen(bool alreadyHasName)
 	cout << "=== 1 - Single Player Game\n";
 	cout << "=== 2 - Multiplayer Game\n";
 	cout << "=== g - Guide\n";
+	cout << "=== q - Quit Game\n";
 	cout << "";
 
 	bool x = false;
 	while (!x)
 	{
 		cin >> mainMenuInput;
-		if (mainMenuInput == '1' || mainMenuInput == '2' || mainMenuInput == 'g')
+		if (mainMenuInput == '1' || mainMenuInput == '2' || mainMenuInput == 'g' || mainMenuInput == 'q')
 		{
 			x = true;
 		}
@@ -46,6 +47,7 @@ void MainMenu_Screen(bool alreadyHasName)
 			cout << "=== 1 - Single Player Game\n";
 			cout << "=== 2 - Multiplayer Game\n";
 			cout << "=== g - Guide\n";
+			cout << "=== q - Quit Game\n";
 		}
 	}
 
@@ -100,4 +102,10 @@ void Guide_Screen()
 void StartGame(bool multiplayer)
 {
 	//transition to the actual game, JOBARDIC-7 needs to be done
+}
+
+void QuitGame() //quits the program with a final message
+{
+	cout << "\nSee you next time, " << PlayerName << "!\n";
+	exit(EXIT_SUCCESS);
 }

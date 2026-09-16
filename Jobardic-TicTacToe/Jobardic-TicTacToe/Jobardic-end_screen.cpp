@@ -43,8 +43,8 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 	switch (endscreenInput)
 	{
 		case 'r':
-			//function related to JOBARDIC-7's task
-			StartGame(multiplayer);
+			//function related to JOBARDIC-8's task
+			//StartGame(multiplayer);
 			break;
 		case 'm':
 			//function related to JOBARDIC-7's task

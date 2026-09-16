@@ -13,6 +13,7 @@ perhaps could have the player enter "sp" and "mp" for singleplayer and multiplay
 Also up to you, but should MainMenu_Screen have a boolean argument which determines if setting-name part of the code runs?
 Might make more sense when used by the end screen's replay game functionality.
 Would also just make the default name "Player"
+Also i believe the "start game" function itself would be what Joseph defines for JOBARDIC-7 task
 */
 
 void MainMenu_Screen() 

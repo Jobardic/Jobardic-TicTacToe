@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Jobardic-end_screen.h" />
+    <ClInclude Include="Jobardic-start_screen.h" />
     <ClInclude Include="Jobardic-test_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

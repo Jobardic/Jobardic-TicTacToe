@@ -10,17 +10,15 @@ bool multiplayer = false;
 
 /*
 comments by matt: 
-perhaps could have the player enter "sp" and "mp" for singleplayer and multiplayer if thats better ?
-Also up to you, but should MainMenu_Screen have a boolean argument which determines if setting-name part of the code runs?
+ATTEMPTED: Also up to you, but should MainMenu_Screen have a boolean argument which determines if setting-name part of the code runs?
 Might make more sense when used by the end screen's replay game functionality.
-Would also just make the default name "Player"
-Also i believe the "start game" function itself would be what Joseph defines for JOBARDIC-7 task
 */
 
-void MainMenu_Screen() 
+void MainMenu_Screen(bool hasname)
 {
+	bool hasName = hasname;
 	cout << "Tic Tac Toe\n";
-	while (PlayerName == "")
+	while (!hasName)
 	{
 		cout << "Please enter your name: ";
 		cin >> PlayerName; 
@@ -30,7 +28,7 @@ void MainMenu_Screen()
 	char mainMenuInput = ' ';
 	cout << "Welcome, " << PlayerName << "! Type a command to continue:\n";
 	cout << "=== 1 - Single Player Game\n";
-	cout << "=== 2 - Multiplayer Game\n"; // maybe this should be a different letter since m is used for main menu?
+	cout << "=== 2 - Multiplayer Game\n";
 	cout << "=== g - Guide\n";
 	cout << "";
 
@@ -96,15 +94,10 @@ void Guide_Screen()
 	cout << "\nPress any key to return to the main menu: ";
 	cin >> guideInput;
 	cout << endl;
-	MainMenu_Screen();
+	MainMenu_Screen(true);
 }
 
 void StartGame(bool multiplayer)
 {
-	//transition to the actual game
+	//transition to the actual game, JOBARDIC-7 needs to be done
 }
-
-/*void SetPlayerName(string name)
-{
-	PlayerName = name;
-}*/

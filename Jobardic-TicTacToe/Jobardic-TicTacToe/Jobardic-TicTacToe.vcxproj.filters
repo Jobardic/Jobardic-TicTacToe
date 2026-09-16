@@ -35,5 +35,8 @@
     <ClInclude Include="Jobardic-end_screen.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Jobardic-start_screen.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@ extern string PlayerName; //assumes playerName exists and is defined elsewhere b
 extern bool multiplayer;
 
 void PrintWin(); void PrintLose(); void PrintDraw(); void QuitGame(); 
-extern void StartGame(bool multiplayer); extern void MainMenu_Screen();
+extern void StartGame(bool multiplayer); extern void MainMenu_Screen(bool);
 
 void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEndScreen("LOSE") if player lost, PrintEndScreen("DRAW") if draw.
 {
@@ -48,7 +48,7 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 			break;
 		case 'm':
 			//function related to JOBARDIC-7's task
-			MainMenu_Screen();
+			MainMenu_Screen(false);
 			//Would be MainMenu_Screen(false) if considering the comment I left in start_screen file
 			break;
 		case 'q':

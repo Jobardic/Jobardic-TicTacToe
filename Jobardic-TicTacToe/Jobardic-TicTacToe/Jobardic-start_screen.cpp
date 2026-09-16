@@ -22,7 +22,7 @@ void MainMenu_Screen(bool hasname)
 	{
 		cout << "Please enter your name: ";
 		cin >> PlayerName; 
-		bool hasName = true;
+		hasName = true;
 	}
 
 	char mainMenuInput = ' ';

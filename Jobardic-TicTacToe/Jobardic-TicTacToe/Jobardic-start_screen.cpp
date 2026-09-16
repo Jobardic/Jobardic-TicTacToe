@@ -15,7 +15,12 @@ Also up to you, but should MainMenu_Screen have a boolean argument which determi
 Might make more sense when used by the end screen's replay game functionality.
 Would also just make the default name "Player"
 Also i believe the "start game" function itself would be what Joseph defines for JOBARDIC-7 task
+
+comment by matt 9/16 2:44 pm: GOTTA REMEMBER FUNCTION PROTOTYPES IF DEFINED AFTER OTHER CODE WHICH USES THEM! I added them for you below
 */
+
+void StartGame(bool multiplayer); //added by matt
+void Guide_Screen(); //added by matt
 
 void MainMenu_Screen() 
 {

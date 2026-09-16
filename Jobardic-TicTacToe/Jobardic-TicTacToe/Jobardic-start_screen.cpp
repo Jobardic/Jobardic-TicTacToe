@@ -14,7 +14,7 @@ ATTEMPTED: Also up to you, but should MainMenu_Screen have a boolean argument wh
 Might make more sense when used by the end screen's replay game functionality.
 */
 
-void MainMenu_Screen(bool alreadyHasName)
+void MainMenu_Screen(bool alreadyHasName) 
 {
 	hasName = alreadyHasName;
 	cout << "Tic Tac Toe\n";

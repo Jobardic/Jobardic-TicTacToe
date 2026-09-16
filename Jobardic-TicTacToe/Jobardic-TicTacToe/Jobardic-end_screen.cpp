@@ -43,11 +43,11 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 	switch (endscreenInput)
 	{
 		case 'r':
-			//function related to JOBARDIC-8's task
-			//StartGame(multiplayer);
+			//function related to JOBARDIC-7's task
+			//StartGame();
 			break;
 		case 'm':
-			//function related to JOBARDIC-7's task
+			//function related to JOBARDIC-8's task
 			MainMenu_Screen(false);
 			//Would be MainMenu_Screen(false) if considering the comment I left in start_screen file
 			break;
@@ -63,15 +63,24 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 
 void PrintWin() //prints the first section of the end screen with "you win" text part
 {
-	cout << "Debug: WIN";
+	cout << "<---------------->" << endl;
+	cout << "!!!! YOU WON !!!!" << endl;
+	//+ stats related to game?
+	cout << "<---------------->" << endl;
 }
 void PrintLose() //prints the first section of the end screen with "you lose" text part
 {
-	cout << "Debug: LOSE";
+	cout << "<---------------->" << endl;
+	cout << ".... YOU LOSE ...." << endl;
+	//+ stats related to game?
+	cout << "<---------------->" << endl;
 }
 void PrintDraw() //prints the first section of the end screen with "game is a draw" text part
 {
-	cout << "Debug: DRAW";
+	cout << "<------------------------>" << endl;
+	cout << "  - - GAME IS A DRAW - -  " << endl;
+	//+ stats related to game?
+	cout << "<------------------------>" << endl;
 }
 void QuitGame() //quits the program with a final message
 {

@@ -9,7 +9,8 @@
 #include "Jobardic-end_screen.h"; //By Matthew Mullen
 using namespace std;
 
-string playerName = "Player"; //by default
+extern string PlayerName;
+extern bool multiplayer;
 
 
 int main()

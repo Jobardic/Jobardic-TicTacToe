@@ -7,6 +7,14 @@ string PlayerName = "asdfasdfasdf"; // weird default but figured it could be use
 
 bool multiplayer = false;
 
+/*
+comments by matt: 
+perhaps could have the player enter "sp" and "mp" for singleplayer and multiplayer if thats better ?
+Also up to you, but should MainMenu_Screen have a boolean argument which determines if setting-name part of the code runs?
+Might make more sense when used by the end screen's replay game functionality.
+Would also just make the default name "Player"
+*/
+
 void MainMenu_Screen() 
 {
 	cout << "Tic Tac Toe\n";

@@ -6,9 +6,8 @@ using namespace std;
 extern string PlayerName; //assumes playerName exists and is defined elsewhere before being used.
 extern bool multiplayer;
 
-void PrintWin(); void PrintLose(); void PrintDraw(); void QuitGame(); 
-extern void StartGame(bool multiplayer); extern void MainMenu_Screen(bool);
-
+void PrintWin(); void PrintLose(); void PrintDraw(); 
+extern void StartGame(bool multiplayer); extern void MainMenu_Screen(bool); extern void QuitGame();
 void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEndScreen("LOSE") if player lost, PrintEndScreen("DRAW") if draw.
 {
 	char endscreenInput;
@@ -49,15 +48,11 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 		case 'm':
 			//function related to JOBARDIC-8's task
 			MainMenu_Screen(false);
-			//Would be MainMenu_Screen(false) if considering the comment I left in start_screen file
 			break;
 		case 'q':
 			QuitGame();
 			break;
 	}
-
-
-	cout << "quit check";
 }
 
 
@@ -82,8 +77,9 @@ void PrintDraw() //prints the first section of the end screen with "game is a dr
 	//+ stats related to game?
 	cout << "<------------------------>" << endl;
 }
-void QuitGame() //quits the program with a final message
+
+/*void QuitGame() //quits the program with a final message     
 {
 	cout << "\nSee you next time, " << PlayerName << "!\n";
 	exit(EXIT_SUCCESS);
-}
+}*/

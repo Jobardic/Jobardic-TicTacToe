@@ -8,6 +8,10 @@ bool hasName = false;
 
 bool multiplayer = false;
 
+
+void StartGame(bool multiplayer); void MainMenu_Screen(bool); void Guide_Screen();
+
+
 /*
 comments by matt: 
 ATTEMPTED: Also up to you, but should MainMenu_Screen have a boolean argument which determines if setting-name part of the code runs?

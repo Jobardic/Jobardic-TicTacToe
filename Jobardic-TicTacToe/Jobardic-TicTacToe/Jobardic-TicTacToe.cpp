@@ -18,6 +18,8 @@ extern bool multiplayer;
 
 int main()
 {
+	MainMenu_Screen(false);
+
    cout << "\n\n\n\n\n"; //before ending program make distance with VS's natural end-of-program output.
 }
 

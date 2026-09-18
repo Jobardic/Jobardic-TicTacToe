@@ -20,6 +20,8 @@ Might make more sense when used by the end screen's replay game functionality.
 
 void MainMenu_Screen(bool alreadyHasName) 
 {
+	system("cls");
+
 	hasName = alreadyHasName;
 	cout << "Tic Tac Toe\n";
 	while (!hasName)
@@ -71,6 +73,7 @@ void MainMenu_Screen(bool alreadyHasName)
 
 void Guide_Screen()
 {
+	system("cls");
 	cout << "\nIn Tac Tac Toe, two players take turns marking spaces in a 3x3 grid, one with X and the other with O.\n";
 
 	cout << "The game is won by marking 3 spaces in the same row, column, or diagonal. \n";
@@ -97,7 +100,7 @@ void Guide_Screen()
 	cout << " 7 | 8 | 9 " << endl;
 
 	char guideInput = ' ';
-	cout << "\nPress any key to return to the main menu: ";
+	cout << "\nEnter any character to return to the main menu: ";
 	cin >> guideInput;
 	cout << endl;
 	MainMenu_Screen(true);

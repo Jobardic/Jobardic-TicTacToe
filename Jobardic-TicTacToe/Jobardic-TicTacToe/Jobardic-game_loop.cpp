@@ -16,18 +16,24 @@ void twoPlayer();
 void singlePlayer();
 
 class TicTacToe {
+
 private: int slots[9];
 
     public:
 
 	TicTacToe() {
-		for (int i = 0; i < 9; i++) {
-			slots[i] = 0;
-		}
+        resetBoard();
 	}
 
+    void resetBoard()
+    {
+        for (int i = 0; i < 9; i++) {
+            slots[i] = 0;
+        }
+    }
+
 	void setSlot(int slot, int value) {
-		if (slot >= 1 && slot < 9) {
+		if (slot >= 1 && slot <= 9) {
 			slots[slot - 1] = value;
 		}
 	}
@@ -38,7 +44,7 @@ private: int slots[9];
 	//2=O
 
     int getSlot(int slot) {
-		if (slot >= 1 && slot < 9) {
+		if (slot >= 1 && slot <= 9) {
 			return slots[slot - 1];
 		}
 		return -1;
@@ -46,6 +52,14 @@ private: int slots[9];
 
     void printBoard() {
         cout << endl;
+        
+        //Prints slots array for debugging purposes
+        /*for (int k = 0; k < 9; k++)
+        {
+            cout << slots[k];
+        }
+        cout << endl;*/
+
 		for (int i = 0; i < 9; i++) {
 			char symbol = ' ';
 
@@ -55,7 +69,7 @@ private: int slots[9];
 			else if (slots[i] == 2) {
 				symbol = 'O';
 			}
-			cout <<""<< symbol << " ";
+			cout <<" "<< symbol << " ";
             if (i % 3 != 2) {
 				cout << "|";
 
@@ -63,8 +77,13 @@ private: int slots[9];
             if (i == 2 || i == 5) {
                 cout << endl;
                 cout << "---+---+---";
+                cout << endl; //
             }
-            cout << endl;
+            if (i == 8)
+            {
+                cout << endl;
+            }
+            //cout << endl;
 		}
     }
 };
@@ -104,7 +123,7 @@ void botTurn(int s) { //randomly generates a number to put
 }
 
 int checkWin() { //if statement has all the possible win permutations to check if they are occupied by X or O
-    if ((ticTacToeBoard.getSlot(0 + 1) == 1 && ticTacToeBoard.getSlot(1 + 1) && ticTacToeBoard.getSlot(2 + 1) == 1) || (ticTacToeBoard.getSlot(3 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(5 + 1) == 1) || (ticTacToeBoard.getSlot(6 + 1) == 1 && ticTacToeBoard.getSlot(7 + 1) == 1 && ticTacToeBoard.getSlot(8 + 1) == 1) || (ticTacToeBoard.getSlot(0 + 1) == 1 && ticTacToeBoard.getSlot(3 + 1) == 1 && ticTacToeBoard.getSlot(6 + 1) == 1) || (ticTacToeBoard.getSlot(1 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(7 + 1) == 1) || (ticTacToeBoard.getSlot(2 + 1) == 1 && ticTacToeBoard.getSlot(5 + 1) == 1 && ticTacToeBoard.getSlot(8 + 1) == 1) || (ticTacToeBoard.getSlot(0 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(8 + 1) == 1) || (ticTacToeBoard.getSlot(2 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(6 + 1) == 1)) {
+    if ((ticTacToeBoard.getSlot(0 + 1) == 1 && ticTacToeBoard.getSlot(1 + 1) == 1 && ticTacToeBoard.getSlot(2 + 1) == 1) || (ticTacToeBoard.getSlot(3 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(5 + 1) == 1) || (ticTacToeBoard.getSlot(6 + 1) == 1 && ticTacToeBoard.getSlot(7 + 1) == 1 && ticTacToeBoard.getSlot(8 + 1) == 1) || (ticTacToeBoard.getSlot(0 + 1) == 1 && ticTacToeBoard.getSlot(3 + 1) == 1 && ticTacToeBoard.getSlot(6 + 1) == 1) || (ticTacToeBoard.getSlot(1 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(7 + 1) == 1) || (ticTacToeBoard.getSlot(2 + 1) == 1 && ticTacToeBoard.getSlot(5 + 1) == 1 && ticTacToeBoard.getSlot(8 + 1) == 1) || (ticTacToeBoard.getSlot(0 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(8 + 1) == 1) || (ticTacToeBoard.getSlot(2 + 1) == 1 && ticTacToeBoard.getSlot(4 + 1) == 1 && ticTacToeBoard.getSlot(6 + 1) == 1)) {
         //X win
         return 1;
     }
@@ -116,6 +135,10 @@ int checkWin() { //if statement has all the possible win permutations to check i
 }
 
 void singlePlayer() {
+    system("cls");
+    ticTacToeBoard.resetBoard();
+    int win = 0;
+
     for (int j = 0; j < 9; j++) { //resets the board
         ticTacToeBoard.setSlot(j + 1, 0);
     }
@@ -152,7 +175,7 @@ void singlePlayer() {
 
         //PRINT BOARD HERE: FOR JOBARDIC-10
 
-        int win = checkWin(); //checks win
+        win = checkWin(); //checks win
         if (win == 1) {
             if (playerX) {
                 PrintEndScreen("WIN");
@@ -176,6 +199,10 @@ void singlePlayer() {
 }
 
 void twoPlayer() { //same as singleplayer but there's no bot turn
+    system("cls");
+
+    ticTacToeBoard.resetBoard();
+
     for (int j = 0; j < 9; j++) {
         ticTacToeBoard.setSlot(j + 1, 0);
     }
@@ -192,6 +219,7 @@ void twoPlayer() { //same as singleplayer but there's no bot turn
             playerTurn(2);
             XTurn = true;
         }
+        system("cls");
         ticTacToeBoard.printBoard();
 
         //PRINT BOARD HERE: FOR JOBARDIC-10

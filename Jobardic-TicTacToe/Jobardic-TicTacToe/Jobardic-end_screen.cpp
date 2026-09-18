@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include <cstdlib>
+#include "Jobardic-game_loop.h"
 using namespace std;
 
 extern string PlayerName; //assumes playerName exists and is defined elsewhere before being used.
@@ -8,7 +9,7 @@ extern bool multiplayer;
 
 void PrintWin(); void PrintLose(); void PrintDraw(); void PrintPlayerWin(string player);
 extern void StartGame(bool multiplayer); extern void MainMenu_Screen(bool); extern void QuitGame();
-void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEndScreen("LOSE") if player lost, PrintEndScreen("DRAW") if draw.
+void PrintEndScreen(string type) //PrintEndScreen("X") if player X won, PrintEndScreen("O") if player O won, PrintEndScreen("DRAW") if draw, PrintEndScreen("WIN") if singleplayer & player won, PrintEndScreen("LOSE") if singleplayer & player lost.
 {
 	char endscreenInput;
 
@@ -42,7 +43,7 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 	
 	//Second part of end screen: where the user is prompted for a further action
 
-	cout << "\nWhat's Next, " << PlayerName << "?\n";
+	cout << "\nWhat's Next?\n";
 	cout << "=== r - Replay Game\n";
 	cout << "=== m - Return to Main Menu\n";
 	cout << "=== q - Quit Game\n";
@@ -51,13 +52,18 @@ void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEnd
 	switch (endscreenInput)
 	{
 		case 'r':
-			//function related to JOBARDIC-7's task
-			//StartGame();
+			//function related to JOBARDIC-7's task: StartGame()
+
+			if (multiplayer) StartGame(true);
+			else StartGame(false);
+
 			break;
+
 		case 'm':
 			//function related to JOBARDIC-8's task
-			MainMenu_Screen(false);
+			MainMenu_Screen(true);
 			break;
+
 		case 'q':
 			QuitGame();
 			break;

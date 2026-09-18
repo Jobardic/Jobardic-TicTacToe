@@ -6,14 +6,23 @@ using namespace std;
 extern string PlayerName; //assumes playerName exists and is defined elsewhere before being used.
 extern bool multiplayer;
 
-void PrintWin(); void PrintLose(); void PrintDraw(); 
+void PrintWin(); void PrintLose(); void PrintDraw(); void PrintPlayerWin(string player);
 extern void StartGame(bool multiplayer); extern void MainMenu_Screen(bool); extern void QuitGame();
 void PrintEndScreen(string type) //PrintEndScreen("WIN") if player won, PrintEndScreen("LOSE") if player lost, PrintEndScreen("DRAW") if draw.
 {
 	char endscreenInput;
 
 	//First part of end screen 
-	if (type == "WIN")
+	if (multiplayer)
+	{
+		if (type == "X" || type == "O") {
+			PrintPlayerWin(type);
+		}
+		else {
+			PrintDraw();
+		}
+	}
+	else if (type == "WIN")
 	{
 		PrintWin();
 	}
@@ -76,6 +85,13 @@ void PrintDraw() //prints the first section of the end screen with "game is a dr
 	cout << "  - - GAME IS A DRAW - -  " << endl;
 	//+ stats related to game?
 	cout << "<------------------------>" << endl;
+}
+
+void PrintPlayerWin(string player)
+{
+	cout << "<---------------->" << endl;
+	cout << "!!!! " << player << " WON !!!!" << endl;
+	cout << "<---------------->" << endl;
 }
 
 /*void QuitGame() //quits the program with a final message     

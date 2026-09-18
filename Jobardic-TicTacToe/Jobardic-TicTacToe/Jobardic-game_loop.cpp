@@ -135,11 +135,11 @@ void twoPlayer() { //same as singleplayer but there's no bot turn
 
         int win = checkWin();
         if (win == 1) {
-            PrintEndScreen("WIN");
+            PrintEndScreen("X");
             break;
         }
         else if (win == 2) {
-            PrintEndScreen("LOSE");
+            PrintEndScreen("O");
             break;
         }
         if (i >= 9) { PrintEndScreen("DRAW"); }

@@ -7,7 +7,8 @@
 #include <iostream>
 #include "Jobardic-test_header.h"
 #include "Jobardic-start_screen.h" //By Paul Ribardo (still need to add quit option)
-#include "Jobardic-end_screen.h"; //By Matthew Mullen
+#include "Jobardic-end_screen.h" //By Matthew Mullen
+#include "Jobardic-game_loop.h" //By Joseph Cama
 
 using namespace std;
 

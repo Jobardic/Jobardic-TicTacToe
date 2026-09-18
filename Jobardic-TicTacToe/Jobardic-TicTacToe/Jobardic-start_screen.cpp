@@ -1,16 +1,16 @@
 #include <iostream>
 #include <windows.h>
 #include <cstdlib>
+#include "Jobardic-game_loop.h"
 using namespace std;
 
 string PlayerName = "";
 bool hasName = false;
-
 bool multiplayer = false;
-
+void singlePlayer();
+void twoPlayer();
 
 void StartGame(bool multiplayer); void MainMenu_Screen(bool); void Guide_Screen();
-
 
 /*
 comments by matt: 
@@ -105,6 +105,23 @@ void Guide_Screen()
 
 void StartGame(bool multiplayer)
 {
+	if (multiplayer) {
+		XTurn = true;
+		twoPlayer();
+	} else {
+		cout << "Enter x to play X" << endl << "Enter o to play O" << endl;
+		string input;
+		cin >> input;
+		XTurn = true;
+		if (input == "X" || input == "x") {
+			playerX = true;
+			singlePlayer();
+		}
+		else if (input == "o" || input == "O") {
+			playerX = false;
+			singlePlayer();
+		}
+	}
 	//transition to the actual game, JOBARDIC-7 needs to be done
 }
 

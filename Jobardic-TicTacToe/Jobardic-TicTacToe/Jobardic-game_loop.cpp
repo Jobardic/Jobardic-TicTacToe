@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
 extern void PrintEndScreen(string type);
 extern bool multiplayer;
 int board[9] = { 0,0,0,0,0,0,0,0,0 }; //the board as an array, 0 for empty, 1 for X, 2 for O
@@ -13,6 +14,63 @@ bool playerX = false;
 
 void twoPlayer();
 void singlePlayer();
+
+class TicTacToe {
+private: int slots[9];
+
+    public:
+
+	TicTacToe() {
+		for (int i = 0; i < 9; i++) {
+			slots[i] = 0;
+		}
+	}
+
+	void setSlot(int slot, int value) {
+		if (slot >= 1 && slot < 9) {
+			slots[slot - 1] = value;
+		}
+	}
+
+    //Returns the value of a slot
+    //0=empty
+	//1=X
+	//2=O
+
+    int getSlot(int slot) {
+		if (slot >= 1 && slot < 9) {
+			return slots[slot - 1];
+		}
+		return -1;
+    }
+
+    void printBoard() {
+        cout << endl;
+		for (int i = 0; i < 9; i++) {
+			char symbol = ' ';
+
+			if (board[i] == 1) {
+				symbol = 'X';
+			}
+			else if (board[i] == 2) {
+				symbol = 'O';
+			}
+			cout <<""<< symbol << " ";
+            if (i % 3 != 2) {
+				cout << "|";
+
+            }
+            if (i == 2 || i == 5) {
+                cout << endl;
+                cout << "---+---+---";
+            }
+            cout << endl;
+		}
+    }
+};
+
+TicTacToe ticTacToeBoard;
+
 
 void playerTurn(int s) { //takes the player input and sees if it's taken or not
     while (true) {
@@ -61,6 +119,7 @@ void singlePlayer() {
     for (int j = 0; j < 9; j++) { //resets the board
         board[j] = 0;
     }
+    ticTacToeBoard.printBoard();
 
     //PRINT BOARD HERE: FOR JOBARDIC-10
 
@@ -88,6 +147,8 @@ void singlePlayer() {
             XTurn = true;
         }
         system("cls");
+
+        ticTacToeBoard.printBoard();
 
         //PRINT BOARD HERE: FOR JOBARDIC-10
 
@@ -118,6 +179,7 @@ void twoPlayer() { //same as singleplayer but there's no bot turn
     for (int j = 0; j < 9; j++) {
         board[j] = 0;
     }
+    ticTacToeBoard.printBoard();
 
     //PRINT BOARD HERE: FOR JOBARDIC-10
 
@@ -130,6 +192,7 @@ void twoPlayer() { //same as singleplayer but there's no bot turn
             playerTurn(2);
             XTurn = true;
         }
+        ticTacToeBoard.printBoard();
 
         //PRINT BOARD HERE: FOR JOBARDIC-10
 
